@@ -5,7 +5,7 @@
 This is a package provides a minor mode for controlling spotify client through Emacs. It does it by hooking into the D-Bus interface of spotify. So the other than linux it may not work.
 
 * Keybindings
-All keybindings are prefixed by ~C-x C-u~. Which can be changed from the customization UI.
+All keybindings are prefixed by ~C-x C-s~. Which can be changed from the customization UI.
 
 | Keybindings | Function           |
 |-------------+--------------------|
