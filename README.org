@@ -1,0 +1,19 @@
+#+TITLE: Spotemacs a package for changing playlist and control playback of spotify client
+#+AUTHOR: Rudranil Sarkar
+
+
+This is a package provides a minor mode for controlling spotify client through Emacs. It does it by hooking into the D-Bus interface of spotify. So the other than linux it may not work.
+
+* Keybindings
+All keybindings are prefixed by ~C-x C-u~. Which can be changed from the customization UI.
+
+| Keybindings | Function           |
+|-------------+--------------------|
+| p           | Play / Pause Track |
+| P           | Previous Track     |
+| n           | Next Track         |
+| c           | Change Playlist    |
+| a           | Add a playlist     |
+
+* Adding Playlists
+Currently Adding playlist is kinda hassle. You have to provide the playlist url and playlist name yourself. I am working on adding the oauth support to automatically fetch your playlists.
