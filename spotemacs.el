@@ -113,6 +113,10 @@ returns t if running nil if not"
     (save-excursion (goto-char (point-min))
                     (read(thing-at-point 'list t)))))
 
+(defun spotemacs--key (key)
+  "Helper function to create keybindings"
+  (kbd (concat spotemacs-keymap-prefix key)))
+
 ;; User facing functions
 
 (defun spotemacs-play-pause-track ()
@@ -143,6 +147,7 @@ returns t if running nil if not"
                                  spotemacs--spotify-dbus-interface "Previous"))))
 
 (defun spotemacs-add-playlist (url playlist)
+  "Add playlist to the collection"
   (interactive "sEnter the playlist url: \nsEnter the playlist name: ")
   (let ((id (spotemacs--get-playlist-id url)))
     (spotemacs--add-playlist id playlist)))
@@ -152,9 +157,6 @@ returns t if running nil if not"
   (interactive (let ((playlistAlist (spotemacs--read-cache-file)))
                  (list (assoc-default (completing-read "Choose a Playlist: " playlistAlist nil t) playlistAlist))))
     (spotemacs--play-playlist playlistid))
-
-(defun spotemacs--key (key)
-  (kbd (concat spotemacs-keymap-prefix key)))
 
 ;;;###autoload
 (define-minor-mode spotemacs-mode
