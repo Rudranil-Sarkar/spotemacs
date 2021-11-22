@@ -76,8 +76,15 @@
      ;; Return t if there is a error
      t)))
 
+(defun spotemacs--create-cache-file ()
+  "Create the cache file"
+  (with-current-buffer (find-file-noselect spotemacs--cache-file t)
+    (insert "()")
+    (save-buffer)))
+
 (defun spotemacs--open-cache-buffer ()
   "Open the cache file into a buffer"
+  (unless (file-exists-p spotemacs--cache-file) (spotemacs--create-cache-file))
   (find-file-noselect spotemacs--cache-file t))
 
 (defun spotemacs--add-playlist (id playlistname)
