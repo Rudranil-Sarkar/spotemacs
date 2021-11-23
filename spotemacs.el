@@ -23,8 +23,7 @@
 ;;
 ;;; Code:
 
-(eval-when-compile
-  (require 'dbus))
+(require 'dbus)
 
 ;; vairables
 (defcustom spotemacs--spotify-dbus-service "org.mpris.MediaPlayer2.spotify"
